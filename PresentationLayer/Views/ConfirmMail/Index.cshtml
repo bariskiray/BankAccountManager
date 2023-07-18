@@ -1,0 +1,21 @@
+﻿@model ConfirmMailViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    <form method="post">
+        <h2>Mail</h2>
+        <label>Type your Email:</label>
+        <input type="text" class="form-control" asp-for="Email" value="@ViewBag.v "/>
+
+        <br />
+        <label>Type your email verification code please.</label>
+        <input type="text" class="form-control" asp-for="ConfirmCode" />
+        <button class="btn btn-primary">Activate the account</button>
+    </form>
+</div>
+

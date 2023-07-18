@@ -20,7 +20,7 @@ namespace BusinessLayer.ValidationRules.AppUserValidationRules
             RuleFor(x => x.Name).MaximumLength(30).WithMessage("Please input at most 30 characters.");
             RuleFor(x => x.Name).MinimumLength(2).WithMessage("Please input at least 2 characters");
             RuleFor(x=>x.ConfirmPassword).Equal(y=>y.Password).WithMessage("Your passwords are not matched");
-            RuleFor(x=>x.Email).EmailAddress().WithMessage("Please input a proper email adress")
+            RuleFor(x => x.Email).EmailAddress().WithMessage("Please input a proper email adress");
 
         }
     }
