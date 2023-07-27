@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CustomerAccountServiceManager: ICustomerAccountProcessService
+    public class CustomerAccountProcessManager: ICustomerAccountProcessService
     {
         ICustomerAccountProcessDal _customerAccountProcessDal;
-        public CustomerAccountServiceManager(ICustomerAccountProcessDal customerAccountProcessDal)
+        public CustomerAccountProcessManager(ICustomerAccountProcessDal customerAccountProcessDal)
         {
             _customerAccountProcessDal = customerAccountProcessDal; 
         }

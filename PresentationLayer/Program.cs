@@ -1,6 +1,12 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 using PresentationLayer.Models;
+using System.Security.Principal;
 
 namespace PresentationLayer
 {
@@ -14,6 +20,9 @@ namespace PresentationLayer
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<Context>();
 			builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+            builder.Services.AddTransient<IPrincipal>(provider => provider.GetService<IHttpContextAccessor>().HttpContext.User);
+            
+
 
             var app = builder.Build();
 

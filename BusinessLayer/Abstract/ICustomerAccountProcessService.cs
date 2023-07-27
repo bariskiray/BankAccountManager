@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    internal interface ICustomerAccountProcessService
+    public interface ICustomerAccountProcessService
     {
         void BLInsert(CustomerAccountProcess t);
         void BLDelete(CustomerAccountProcess t);
